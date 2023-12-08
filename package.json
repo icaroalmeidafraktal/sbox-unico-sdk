@@ -11,7 +11,7 @@
   "dependencies": {
     "http-server": "^14.1.1",
     "node-html-parser": "^6.1.10",
-    "unico-webframe": "^3.9.4"
+    "unico-webframe": "^3.10.3"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
