@@ -6,8 +6,7 @@ var callback = {
 
             // Realiza a requisição com os dados
             // da imagem para o endpoint (api2)
-            createProcess(obj);
-            console.log(obj);
+            createProcess(obj)
         },
         error: function (error) {
             //confira na aba "Configura��es" sobre os tipos de erros
@@ -29,5 +28,6 @@ const cameraPromised = unicoCamera.prepareSelfieCamera('/services.json', SelfieC
 cameraPromised.then(cameraOpener => cameraOpener.open(callback))
 
 function createProcess(unico) {
+    console.log("teste 123");
     console.log(unico)
 }
