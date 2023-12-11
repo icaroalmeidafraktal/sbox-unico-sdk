@@ -6,7 +6,16 @@ var callback = {
 
             // Realiza a requisição com os dados
             // da imagem para o endpoint (api2)
-            createProcess(obj)
+            createProcess(obj);
+
+            axios.post('https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie/initialize', obj)
+                .then(response => {
+                    res.end();
+                })
+                .catch(error => {
+                    res.end();
+                });
+
         },
         error: function (error) {
             //confira na aba "Configura��es" sobre os tipos de erros
@@ -28,6 +37,5 @@ const cameraPromised = unicoCamera.prepareSelfieCamera('/services.json', SelfieC
 cameraPromised.then(cameraOpener => cameraOpener.open(callback))
 
 function createProcess(unico) {
-    postMessage(unico);
     console.log(unico)
 }
