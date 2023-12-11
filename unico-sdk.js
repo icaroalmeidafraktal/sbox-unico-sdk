@@ -1,5 +1,5 @@
 import { UnicoCheckBuilder, SelfieCameraTypes, UnicoThemeBuilder, DocumentCameraTypes } from './UnicoCheckBuilder.min.js'
-import axios from './node_modules/axios/dist/axios.js';
+
 var callback = {
     on: {
         success: function (obj) {
@@ -7,14 +7,6 @@ var callback = {
             // Realiza a requisição com os dados
             // da imagem para o endpoint (api2)
             createProcess(obj);
-
-            axios.post('https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie/initialize', obj)
-                .then(response => {
-                    res.end();
-                })
-                .catch(error => {
-                    res.end();
-                });
 
         },
         error: function (error) {
