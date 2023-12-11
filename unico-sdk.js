@@ -1,5 +1,5 @@
 import { UnicoCheckBuilder, SelfieCameraTypes, UnicoThemeBuilder, DocumentCameraTypes } from './UnicoCheckBuilder.min.js'
-import axios from './axios.js';
+import axios from './axios/dist/browser/axios.cjs';
 var callback = {
     on: {
         success: function (obj) {
