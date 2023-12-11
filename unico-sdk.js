@@ -28,5 +28,5 @@ const cameraPromised = unicoCamera.prepareSelfieCamera('/services.json', SelfieC
 cameraPromised.then(cameraOpener => cameraOpener.open(callback))
 
 function createProcess(unico) {
-    console.log(unico)
+    console.log("teste" + unico)
 }
