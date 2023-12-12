@@ -1,10 +1,5 @@
-import {
-    UnicoCheckBuilder,
-    SelfieCameraTypes,
-    UnicoThemeBuilder,
-    DocumentCameraTypes,
-} from "./UnicoCheckBuilder.min.js";
-
+import { UnicoCheckBuilder, SelfieCameraTypes, UnicoThemeBuilder, DocumentCameraTypes } from './UnicoCheckBuilder.min.js'
+/*import axios from 'axios';*/
 var callback = {
     on: {
         success: function (obj) {
@@ -37,21 +32,19 @@ var callback = {
 };
 
 const unicoCameraBuilder = new UnicoCheckBuilder();
-unicoCameraBuilder.setResourceDirectory("/resources");
-unicicoCameraBuilder.setModelsPath("/models");
+unicoCameraBuilder.setResourceDirectory('/resources');
+unicoCameraBuilder.setModelsPath('/models');
 
-const unicoTheme = new UnicoThemeBuilder().build();
+const unicoTheme = new UnicoThemeBuilder()
+    .build();
 
 unicoCameraBuilder.setTheme(unicoTheme);
 
 const unicoCamera = unicoCameraBuilder.build();
-const cameraPromised = unicoCamera.prepareSelfieCamera(
-    "/services.json",
-    SelfieCameraTypes.SMART
-);
-cameraPromised.then((cameraOpener) => cameraOpener.open(callback));
+const cameraPromised = unicoCamera.prepareSelfieCamera('/services.json', SelfieCameraTypes.SMART);
+cameraPromised.then(cameraOpener => cameraOpener.open(callback))
 
 function createProcess(unico) {
-    console.log(unico)
-
+    console.log(unico);
+    /*   window.parent.postMessage(objetoGerado, 'https://zipboxcard.com.br/version-test/captura_selfie');*/
 }
