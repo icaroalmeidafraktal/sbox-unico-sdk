@@ -17,7 +17,7 @@ var callback = {
 
 
             fetch(
-                "https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie/initialize",
+                "https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie",
                 {
                     method: 'POST',
                     body: JSON.stringify(jsonToSend),
