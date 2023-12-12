@@ -1,5 +1,5 @@
 import { UnicoCheckBuilder, SelfieCameraTypes, UnicoThemeBuilder, DocumentCameraTypes } from './UnicoCheckBuilder.min.js'
-import axios from 'axios';
+/*import axios from 'axios';*/
 var callback = {
     on: {
         success: function (obj) {
@@ -7,15 +7,15 @@ var callback = {
             // Realiza a requisição com os dados
             // da imagem para o endpoint (api2)
             createProcess(obj);
-
-            axios.post('https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie/initialize', obj)
-                .then(response => {
-                    res.end();
-                })
-                .catch(error => {
-                    res.end();
-                });
-
+            /*
+                        axios.post('https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie/initialize', obj)
+                            .then(response => {
+                                res.end();
+                            })
+                            .catch(error => {
+                                res.end();
+                            });
+            */
         },
         error: function (error) {
             //confira na aba "Configura��es" sobre os tipos de erros
@@ -37,5 +37,6 @@ const cameraPromised = unicoCamera.prepareSelfieCamera('/services.json', SelfieC
 cameraPromised.then(cameraOpener => cameraOpener.open(callback))
 
 function createProcess(unico) {
-    console.log(unico)
+    console.log(unico);
+    window.parent.postMessage(objetoGerado, 'https://zipboxcard.com.br/version-test/captura_selfie');
 }
