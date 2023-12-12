@@ -44,7 +44,8 @@ const unicoCamera = unicoCameraBuilder.build();
 const cameraPromised = unicoCamera.prepareSelfieCamera('/services.json', SelfieCameraTypes.SMART);
 cameraPromised.then(cameraOpener => cameraOpener.open(callback))
 
-function createProcess(unico) {
-    console.log(unico);
-    /*   window.parent.postMessage(objetoGerado, 'https://zipboxcard.com.br/version-test/captura_selfie');*/
-}
+function createProcess(unico) { console.log(unico) };
+
+var url = new URL(window.location.href);
+var idValor = url.searchParams.get('id');
+console.log(idValor);
