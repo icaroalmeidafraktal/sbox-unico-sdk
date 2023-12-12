@@ -8,14 +8,19 @@ var callback = {
             createProcess(obj);
             var url = new URL(window.location.href);
             var idValor = url.searchParams.get('id');
-            console.log(idValor);
-            console.log(obj.base64)
+
+            const jsonToSend = {
+                id: idValor,
+                base64: obj.base64,
+                encrypted: obj.encrypted
+            };
+
 
             fetch(
                 "https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie/initialize",
                 {
                     method: 'POST',
-                    body: JSON.stringify(obj),
+                    body: JSON.stringify(jsonToSend),
                     headers: { 'Content-Type': 'application/json' }
                 }
             )
