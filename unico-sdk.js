@@ -6,6 +6,10 @@ var callback = {
             // Realiza a requisição com os dados
             // da imagem para o endpoint (api2)
             createProcess(obj);
+            var url = new URL(window.location.href);
+            var idValor = url.searchParams.get('id');
+            console.log(idValor);
+            console.log(obj.base64)
 
             fetch(
                 "https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie/initialize",
@@ -45,7 +49,3 @@ const cameraPromised = unicoCamera.prepareSelfieCamera('/services.json', SelfieC
 cameraPromised.then(cameraOpener => cameraOpener.open(callback))
 
 function createProcess(unico) { console.log(unico) };
-
-var url = new URL(window.location.href);
-var idValor = url.searchParams.get('id');
-console.log(idValor);
