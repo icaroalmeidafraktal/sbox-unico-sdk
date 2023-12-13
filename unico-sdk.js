@@ -40,7 +40,7 @@ var callback = {
 
 
             fetch(
-                "https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie",
+                "https://sboxgestor.bubbleapps.io/api/1.1/wf/recieve_selfie",
                 { method: 'POST', body: JSON.stringify(jsonToSend), headers: { 'Content-Type': 'application/json' } }
             )
                 .then((response) => { if (!response.ok) { throw new Error('Network response was not ok'); } })
