@@ -15,3 +15,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.cameraBoxContainer {
+    width: 600px;
+    height: 400px;
+    position: relative;
+}
