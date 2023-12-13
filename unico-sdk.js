@@ -16,16 +16,12 @@ function mostrarModal() {
     conteudo.style.padding = "20px";
     conteudo.style.borderRadius = "10px";
     let mensagem = document.createElement("p");
-    mensagem.textContent = "Processo executado com sucesso. A página fechará em 5 segundos.";
+    mensagem.textContent = "Processo executado com sucesso. A página já pode ser fechada.";
     conteudo.appendChild(mensagem);
     modal.appendChild(conteudo);
     document.body.appendChild(modal);
     return mensagem;
 }
-
-function fecharAba() { window.close() }
-let tempo = 5;
-
 
 var callback = {
     on: {
@@ -50,13 +46,8 @@ var callback = {
                 .then((response) => { if (!response.ok) { throw new Error('Network response was not ok'); } })
                 .catch((error) => { console.error('There has been a problem with your fetch operation:', error); });
 
-            let msg = mostrarModal();
-            function atualizarMensagem() {
-                tempo--;
-                msg.textContent = "Processo executado com sucesso. A página fechará em " + tempo + " segundos.";
-                if (tempo == 0) { fecharAba() }
-            }
-            setInterval(atualizarMensagem, 1000);
+            mostrarModal();
+
         },
         error: function (error) {
             console.log(error);
