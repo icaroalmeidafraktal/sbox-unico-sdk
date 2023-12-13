@@ -1,5 +1,32 @@
 import { UnicoCheckBuilder, SelfieCameraTypes, UnicoThemeBuilder, DocumentCameraTypes } from './UnicoCheckBuilder.min.js'
-/*import axios from 'axios';*/
+
+function mostrarModal() {
+    let modal = document.createElement("div");
+    modal.style.position = "fixed";
+    modal.style.top = "0";
+    modal.style.left = "0";
+    modal.style.width = "100%";
+    modal.style.height = "100%";
+    modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    modal.style.display = "flex";
+    modal.style.alignItems = "center";
+    modal.style.justifyContent = "center";
+    let conteudo = document.createElement("div");
+    conteudo.style.backgroundColor = "white";
+    conteudo.style.padding = "20px";
+    conteudo.style.borderRadius = "10px";
+    let mensagem = document.createElement("p");
+    mensagem.textContent = "Processo executado com sucesso. A página fechará em 5 segundos.";
+    conteudo.appendChild(mensagem);
+    modal.appendChild(conteudo);
+    document.body.appendChild(modal);
+    return mensagem;
+}
+
+function fecharAba() { window.close() }
+let tempo = 5;
+
+
 var callback = {
     on: {
         success: function (obj) {
@@ -18,22 +45,18 @@ var callback = {
 
             fetch(
                 "https://sboxgestor.bubbleapps.io/version-test/api/1.1/wf/recieve_selfie",
-                {
-                    method: 'POST',
-                    body: JSON.stringify(jsonToSend),
-                    headers: { 'Content-Type': 'application/json' }
-                }
+                { method: 'POST', body: JSON.stringify(jsonToSend), headers: { 'Content-Type': 'application/json' } }
             )
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                })
-                .catch((error) => {
-                    console.error('There has been a problem with your fetch operation:', error);
-                });
+                .then((response) => { if (!response.ok) { throw new Error('Network response was not ok'); } })
+                .catch((error) => { console.error('There has been a problem with your fetch operation:', error); });
 
-            window.close();
+            let msg = mostrarModal();
+            function atualizarMensagem() {
+                tempo--;
+                msg.textContent = "Processo executado com sucesso. A página fechará em " + tempo + " segundos.";
+                if (tempo == 0) { fecharAba() }
+            }
+            setInterval(atualizarMensagem, 1000);
         },
         error: function (error) {
             console.log(error);
