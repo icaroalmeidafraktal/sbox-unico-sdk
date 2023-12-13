@@ -32,6 +32,8 @@ var callback = {
                 .catch((error) => {
                     console.error('There has been a problem with your fetch operation:', error);
                 });
+
+            window.close();
         },
         error: function (error) {
             console.log(error);

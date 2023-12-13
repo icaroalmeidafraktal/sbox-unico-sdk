@@ -19,5 +19,5 @@ body {
 .cameraBoxContainer {
     width: 600px;
     height: 400px;
-    position: relative;
+    position: center;
 }
