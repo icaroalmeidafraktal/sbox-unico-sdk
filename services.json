@@ -1,16 +1,16 @@
 {
     "project_info": {
-        "project_number": "9554769147211182494996",
-        "project_id": "sbox_web"
+        "project_number": "550321494346874057701858",
+        "project_id": ""
     },
     "client_info": {
-        "mobilesdk_app_id": "3:797784:js",
+        "mobilesdk_app_id": "3:404833:js",
         "js_client_info": {
-            "hostname": "https://strategy.cyclic.cloud"
+            "hostname": "strategy.cyclic.cloud"
         }
     },
     "host_info": {
-        "host_info": "nRMqSJJeWMZ0K4n9Dxs/Zhb5RslAxes+pmH0gJgmVtbCkO5ZnxCWzlksNtcT5D/U",
-        "host_key": "nAOH8qlvzhU4hS2TkCGQGl2wv0+pXRYTcs8O1GYIvmS/fzrYda4y1HHDm1jjnmyz"
+        "host_info": "Up4XTo9Enmc9krxVWOW2Kq6lMoAEMEpBu5UmO7PA/yc=",
+        "host_key": "dmP5tCwWYc+/ZYzD1Rb82ks9r3QkWDUVcy2RzzrQUAYsFWkcBJcYsOoHly98enJ/"
     }
 }
